@@ -11,11 +11,11 @@ def not_blank(question, error_message):
             return response
 
         else:
-            print(error_message)
+            print("sorry - this can't be blank, "
+                 "please enter your Name")
+
 
 
 
 # Main Routine goes here
-name = not_blank("Name: ",
-                 "sorry - this can't be blank, "
-                 "please enter your Name")
+name = not_blank("Name: ")

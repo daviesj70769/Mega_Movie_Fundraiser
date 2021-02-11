@@ -3,6 +3,22 @@
 
 # functions go here
 
+# checks that ticket name is not blank
+def not_blank(question, error_message):
+    valid = False
+
+    while not valid:
+        response = input(question)
+
+        # If name is not blank, program continues
+        if response != "":
+            return response
+
+        # If name is blank, show error (& repeat loop)
+        else:
+            print(error_message)
+            print()
+
 
 # *********** Main Routine **********
 
@@ -12,17 +28,19 @@
 
 # loop to get ticket details
 
-   # Get name (can't be blank)
+# Get name (can't be blank)
+name = not_blank("Name: ", "sorry - this can't be blank, "
+                 "please enter your Name")
 
-   # Get age (between 12 and 130)
+# Get age (between 12 and 130)
 
-   # Calculate ticket price
+# Calculate ticket price
 
-   # Loop to ask for snacks
+# Loop to ask for snacks
 
-   # Calculate snack price
+# Calculate snack price
 
-   # ask for payment method (and apply surcharge if necesary)
+# ask for payment method (and apply surcharge if necesary)
 
 
 # Calculate Total sales profit
