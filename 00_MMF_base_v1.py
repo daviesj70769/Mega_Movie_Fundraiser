@@ -20,6 +20,29 @@ def not_blank(question, error_message):
             print()
 
 
+# checks for an integer between two values
+def int_check(question, low_num, high_num):
+
+            error = "please enter a whole number between {} " \
+                    "and {}".format(low_num, high_num)
+
+            valid = False
+            while not valid:
+
+                # ask user for number and chek it is valid
+                try:
+                    response = int(input(question))
+
+                    if low_num <= response <= high_num:
+                        return response
+                    else:
+                        print(error)
+
+                # if an integer is not entered, display an error
+                except ValueError:
+                    print(error)
+
+
 # *********** Main Routine **********
 
 # Set up dictionaries / lists needed to hold data
