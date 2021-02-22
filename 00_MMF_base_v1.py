@@ -71,16 +71,29 @@ while name != "xxx" and count < MAX_TICKETS:
 
     # Get details...
 
-    # Get name (can't be blank)
-    name = not_blank("Name: ", "Sorry your name can't be blank")
+    # Get name loop (cant be blank)
+    name = not_blank("What is your name:", "sorry - this can't be blank, "
+                     "please enter your Name:")
+
+    # End the loop if the exit code is entered
+    if name == "xxx":
+        break
+
     count += 1
-    print()
+
+    # Get age (between 12 and 130)
+    age = int_check("Age: ", 12, 130)
+
+
+# End of tickets loop
+
+# Calculate profit etc...
 
 if count == MAX_TICKETS:
     print("you have sold all the available tickets!")
 else:
     print("you have sold {} tickets.  \n"
-          "here are {} places still available".format(count, MAX_TICKETS - count))
+          "there are {} places still available".format(count, MAX_TICKETS - count))
 
 
 # Get age (between 12 and 130)
