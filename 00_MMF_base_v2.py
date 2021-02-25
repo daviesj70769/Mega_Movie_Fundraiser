@@ -52,14 +52,14 @@ def int_check(question):
 
 # loop to get ticket details
 
-#start of loop
+# start of loop
 
 # initialise loop so that it runs at least once
 MAX_TICKETS = 5
 
 name = ""
 ticket_count = 0
-ticket_sales = 5
+ticket_sales = 0
 ticket_profit = 0
 
 while name != "xxx" and ticket_count< MAX_TICKETS:
