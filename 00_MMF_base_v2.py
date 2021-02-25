@@ -24,7 +24,7 @@ def not_blank(question, error_message):
 # Checks for an integer more than 0
 def int_check(question):
 
-    error = "please enter a whole number that is more than "
+    error = "please enter a whole number that is more than. "
 
     valid = False
     while not valid:
@@ -55,16 +55,19 @@ def int_check(question):
 #start of loop
 
 # initialise loop so that it runs at least once
-name = ""
-count = 0
 MAX_TICKETS = 5
 
-while name != "xxx" and count < MAX_TICKETS:
+name = ""
+ticket_count = 0
+ticket_sales = 5
+ticket_profit = 0
+
+while name != "xxx" and ticket_count< MAX_TICKETS:
 
     # tells user how many seats are left
-    if count < 4:
+    if ticket_count< MAX_TICKETS - 1:
        print("you have {} seats "
-             "left".format(MAX_TICKETS - count))
+             "left".format(MAX_TICKETS - ticket_count))
 
     # Warns user that only one seat is left!
     else:
@@ -91,18 +94,30 @@ while name != "xxx" and count < MAX_TICKETS:
         print("That is very old - it lookis like a mistake")
         continue
 
-    count += 1
+    if age < 16:
+        ticket_price = 7.5
+    elif age < 65:
+        ticket_price = 10.5
+    else:
+        ticket_price = 6.5
+
+    ticket_count += 1
+    ticket_sales += ticket_price
 
 
 # End of tickets loop
+# Calculate ticket profit...
+ticket_profit + ticket_sales - (5 * ticket_count)
+print("Ticket profit: ${:.2f}".format(ticket_profit))
 
 # Calculate profit etc...
 
-if count == MAX_TICKETS:
+if ticket_count== MAX_TICKETS:
     print("you have sold all the available tickets!")
 else:
     print("you have sold {} tickets.  \n"
-          "there are {} places still available".format(count, MAX_TICKETS - count))
+          "there are {} places still available"
+          .format(ticket_count, MAX_TICKETS - ticket_count))
 
 
 # Get age (between 12 and 130)
