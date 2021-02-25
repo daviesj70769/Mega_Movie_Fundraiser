@@ -1,9 +1,9 @@
-Profit = 0
+profit = 0
 
 name = ""
 while name != "xxx":
 
-    name = input("Name: ") # replace with function call
+    name = input("Name: ")   # replace with function call
 
     # If name is exit code, break out of loop
     if name == "xxx":
@@ -19,4 +19,11 @@ while name != "xxx":
         ticket_price = 6.5
 
     profit_made = ticket_price - 5
+
     profit += profit_made
+
+    print("{} : ${:.2f}".format(name, ticket_price))
+
+    print("Total profit from tickets: ${:.2f}".format(profit))
+    print()
+
