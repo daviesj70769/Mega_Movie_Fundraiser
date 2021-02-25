@@ -76,6 +76,7 @@ while name != "xxx" and ticket_count< MAX_TICKETS:
     # Get details...
 
     # Get name loop (cant be blank)
+    print()
     name = not_blank("What is your name:", "sorry - this can't be blank, "
                      "please enter your Name:")
 
@@ -105,19 +106,21 @@ while name != "xxx" and ticket_count< MAX_TICKETS:
     ticket_sales += ticket_price
 
 
-# End of tickets loop
-# Calculate ticket profit...
-ticket_profit + ticket_sales - (5 * ticket_count)
-print("Ticket profit: ${:.2f}".format(ticket_profit))
+    # End of tickets loop
+    # Calculate ticket profit...
+    ticket_profit += ticket_sales - (5 * ticket_count)
+    print()
+    print("Ticket Price: ${:.2f}".format(ticket_price))
+    print("Ticket profit: ${:.2f}".format(ticket_profit))
 
-# Calculate profit etc...
+    # Calculate profit etc...
 
-if ticket_count== MAX_TICKETS:
-    print("you have sold all the available tickets!")
-else:
-    print("you have sold {} tickets.  \n"
-          "there are {} places still available"
-          .format(ticket_count, MAX_TICKETS - ticket_count))
+    if ticket_count== MAX_TICKETS:
+        print("you have sold all the available tickets!")
+    else:
+        print("you have sold {} tickets.  \n"
+              "there are {} places still available"
+              .format(ticket_count, MAX_TICKETS - ticket_count))
 
 
 # Get age (between 12 and 130)
